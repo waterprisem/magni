@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnrdxx1w6bg2r"]
+
+[ext_resource type="Texture2D" uid="uid://brivrlxkrdk7o" path="res://sprites/run_magni.png" id="1_4op6y"]
+[ext_resource type="PackedScene" uid="uid://djvs2yrewri6" path="res://conveyorbelt.tscn" id="2_4op6y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu7sn"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jix8l"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glbon"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlkkf"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe12f"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qtwp"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy7ct"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o4t1"]
+atlas = ExtResource("1_4op6y")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35nmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu7sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jix8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glbon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlkkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe12f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qtwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy7ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o4t1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_35nmx")
+autoplay = "default"
+frame_progress = 0.295115
+
+[node name="AnimatedSprite2D2" parent="." instance=ExtResource("2_4op6y")]
+position = Vector2(0, 12)

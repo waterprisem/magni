@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://0is6cjus61k5"]
+
+[ext_resource type="PackedScene" uid="uid://df6yu6xbeblxu" path="res://tests/platform.tscn" id="1_n16tt"]
+[ext_resource type="PackedScene" uid="uid://cvsb4ablxgjly" path="res://camera_2d.tscn" id="2_qh1wm"]
+[ext_resource type="PackedScene" uid="uid://bxlmmatqi3rn5" path="res://player/player.tscn" id="3_eeehw"]
+[ext_resource type="PackedScene" uid="uid://bwoevbkw5jeom" path="res://platforms/left_one_way_plank.tscn" id="6_5p1aw"]
+[ext_resource type="PackedScene" uid="uid://c4fm2dg64l5nv" path="res://platforms/magnets/gray_magnet_large.tscn" id="6_7amhd"]
+[ext_resource type="PackedScene" uid="uid://b1nkgfpedtbxs" path="res://platforms/magnets/red_magnet_large.tscn" id="7_7amhd"]
+[ext_resource type="PackedScene" uid="uid://c17rdemoqaydf" path="res://platforms/magnets/gray_magnet_small.tscn" id="7_gmuqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n16tt"]
+
+[node name="playground" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_n16tt")]
+position = Vector2(51, 1)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_qh1wm")]
+position = Vector2(51, 1)
+target = NodePath("../player")
+
+[node name="player" parent="." groups=["Player"] instance=ExtResource("3_eeehw")]
+position = Vector2(85, -7)
+scale = Vector2(0.998926, 1)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(12, -53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.319999, 0.319999)
+shape = SubResource("RectangleShape2D_n16tt")
+
+[node name="one way plank" parent="." instance=ExtResource("6_5p1aw")]
+position = Vector2(23, 27)
+
+[node name="red_magnet_large" parent="." instance=ExtResource("7_7amhd")]
+position = Vector2(125, 26)
+
+[node name="red_magnet_large2" parent="." instance=ExtResource("7_7amhd")]
+position = Vector2(54, 0)
+
+[node name="gray_magnet_large" parent="." instance=ExtResource("6_7amhd")]
+position = Vector2(-8, 11)
+
+[node name="gray_magnet_large2" parent="." instance=ExtResource("6_7amhd")]
+position = Vector2(162, 26)
+
+[node name="gray_magnet_large3" parent="." instance=ExtResource("7_gmuqp")]
+position = Vector2(95, 25)

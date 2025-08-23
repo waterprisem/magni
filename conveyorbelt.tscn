@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://djvs2yrewri6"]
+
+[ext_resource type="Texture2D" uid="uid://chp365lidhbk3" path="res://sprites/conveyor_belt.png" id="1_5sqmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o7fk"]
+atlas = ExtResource("1_5sqmf")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqro1"]
+atlas = ExtResource("1_5sqmf")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ado0"]
+atlas = ExtResource("1_5sqmf")
+region = Rect2(0, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s047"]
+atlas = ExtResource("1_5sqmf")
+region = Rect2(0, 48, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0puyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o7fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqro1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ado0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s047")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_0puyd")
+autoplay = "default"
+flip_h = true

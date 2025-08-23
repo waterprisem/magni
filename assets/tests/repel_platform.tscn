@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8oas8qhr0lv1"]
+
+[ext_resource type="Script" uid="uid://coy58aog86x04" path="res://tests/repel_platform.gd" id="1_8kgjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_memhf"]
+size = Vector2(150, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_memhf"]
+size = Vector2(150, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n16tt"]
+radius = 8.0
+height = 99.9987
+
+[node name="repel platform" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.161948, 0.508151)
+shape = SubResource("RectangleShape2D_memhf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionShape2D"]
+mesh = SubResource("QuadMesh_memhf")
+
+[node name="Area2D" type="Area2D" parent="."]
+gravity_space_override = 1
+gravity_point = true
+gravity = -2988.57
+script = ExtResource("1_8kgjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+scale = Vector2(1.96, -0.160002)
+shape = SubResource("CapsuleShape2D_n16tt")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

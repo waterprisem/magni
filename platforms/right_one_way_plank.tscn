@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr3m2inqkmuv6"]
+
+[ext_resource type="Texture2D" uid="uid://b4q7xax1quyts" path="res://sprites/factory_recolor.png" id="1_di8m8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gux8q"]
+atlas = ExtResource("1_di8m8")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2e2i"]
+size = Vector2(16, 4)
+
+[node name="right_one_way_plank" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gux8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_t2e2i")
+one_way_collision = true

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4fm2dg64l5nv"]
+
+[ext_resource type="Texture2D" uid="uid://dma41mw0ng4gf" path="res://sprites/factory_extra.png" id="1_wc10x"]
+[ext_resource type="Script" uid="uid://x0taly5qahrg" path="res://platforms/magnets/red_area.gd" id="2_gpf2v"]
+[ext_resource type="Script" uid="uid://cbwhto0l8qrw1" path="res://platforms/magnets/white_area.gd" id="3_8av7x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l21u1"]
+atlas = ExtResource("1_wc10x")
+region = Rect2(80, 48, 32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbknq"]
+size = Vector2(32, 8)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nyod8"]
+radius = 1.0
+height = 32.0
+
+[node name="gray_magnet_large" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_l21u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qbknq")
+
+[node name="red area" type="Area2D" parent="."]
+script = ExtResource("2_gpf2v")
+location = "bottom"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="red area"]
+position = Vector2(0, 4)
+rotation = 1.5708
+scale = Vector2(7.95999, 1)
+shape = SubResource("CapsuleShape2D_nyod8")
+
+[node name="white area" type="Area2D" parent="."]
+script = ExtResource("3_8av7x")
+location = "top"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="white area"]
+position = Vector2(0, -4)
+rotation = 1.5708
+scale = Vector2(7.95999, 1)
+shape = SubResource("CapsuleShape2D_nyod8")
+
+[connection signal="body_entered" from="red area" to="red area" method="_on_body_entered"]
+[connection signal="body_exited" from="red area" to="red area" method="_on_body_exited"]
+[connection signal="body_entered" from="white area" to="white area" method="_on_body_entered"]
+[connection signal="body_exited" from="white area" to="white area" method="_on_body_exited"]
