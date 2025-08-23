@@ -981,12 +981,12 @@ shape = SubResource("RectangleShape2D_4e3t1")
 
 [node name="Label" type="Label" parent="text"]
 offset_left = 24.0
-offset_top = -7.0
 offset_right = 139.0
-offset_bottom = 45.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(0.992157, 0.972549, 0.862745, 1)
 theme_override_fonts/font = ExtResource("21_dlnbv")
-text = "←↑→
+text = "arrow key
+or
 [A] [W] [D]"
 horizontal_alignment = 1
 vertical_alignment = 1

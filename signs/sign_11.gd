@@ -23,7 +23,6 @@ func _ready():
 	
 func _on_interact():
 	player.stop_timer()
-	var t = str(timer_text.text)
 	if int(timer_text.text) < 300:
 		lines = [
 			"congrats, you're at the top",
