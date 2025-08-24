@@ -138,10 +138,12 @@ func _handle_animations():
 			
 func get_powers():
 	start_timer()
-	sound_effect.play()
 	if magnet == "n":
+		sound_effect.play()
 		flash.play("hit_flash")
 		magnet = "w"
+	await sound_effect.finished
+	sound_effect
 
 func end_game(end):
 	if end == "win":

@@ -6,7 +6,7 @@ extends Node2D
 const lines: Array[String] = [
 	"getting stuck?",
 	"just keep trying...",
-	"tip: run up to","the 2nd platform,", "jump and switch color", "timing is key"
+	"tip: run up to","the 2nd platform,", "jump & switch color", "timing is key"
 	]
 
 func _ready():
